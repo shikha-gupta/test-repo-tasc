@@ -1,0 +1,101 @@
+@import '../../../../assets/scss/_variables.scss';
+@import '../../../../assets/scss/_mixin.scss';
+    
+.signup-fields {
+  position: relative;
+  z-index: 5;
+  padding: 0 40px;
+  .signup-instruction {
+    visibility: hidden;
+    transition: all .2s ease;
+    height: 0;
+    opacity: 0;
+    &.show-inst {
+      visibility: visible;
+      height: 118px;
+      opacity: 1;
+      transition: all .5s ease;
+    }
+    li {
+      display: flex;
+      align-items: center;
+      @include font-mixin($size: 1.5rem);
+    }
+    span {
+      @include font-mixin($size: 1.4rem);
+      &.icon-process {
+        @include font-mixin($size: 2rem);
+      }
+    }
+  }
+  .password-valid {
+    color: green
+  }
+  .button-transparent {
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+  }
+  .success {
+    @include font-mixin($colour: tasc-color('foreground', 'focus'), $weight: 600);
+  }
+  .focus-msg {
+    @include font-mixin('Roboto-light', 1.6rem, tasc-color('foreground', 'link'), bold);
+    position: absolute;
+    right: 12px;
+    top: 35px;
+    z-index: 11;
+  }
+  .focus-msg-check {
+    @include font-mixin('Roboto-light', 2rem, tasc-color('foreground', 'success'), bold);
+    position: absolute;
+    right: 15px;
+    top: 22px;
+    z-index: 11;
+  }
+}
+
+.signup-msg {
+  @include font-mixin('Roboto-light', 1.8rem, $lh: 29px);
+  opacity: 0.85;
+  padding: 0 15px;
+  position: relative;
+  z-index: 10;
+}
+
+.signup-error {
+  @include font-mixin($size: 11rem);
+  line-height: 75%;
+}
+
+@media (max-width: 991px) {
+  .signup-fields {
+    padding: 0 15px;
+    .focus-msg {
+      top: 28px;
+    }
+    .signup-instruction { 
+      padding-top: 10px;
+    }
+    form {
+      position: relative;
+      z-index: 30;
+    }
+    &:after {
+      background:tasc-color('foreground', 'light');
+      height: 150px;
+      width: 100%;
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: -120px;
+      top: auto;
+      left: 0;
+      -webkit-transform: skewY(174deg);
+      transform: skewY(174deg);
+    }
+  }
+}

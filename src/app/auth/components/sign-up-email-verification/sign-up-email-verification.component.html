@@ -1,0 +1,30 @@
+<div class="font-bold black font-18 verification-code mb-4">Enter verification code</div>
+<div class="signup-msg my-3">
+  We just sent an email to {{emailIdToVerify}}
+</div>
+<div class="text-center pt-5">
+  <a class="btn-success-text" [routerLink]="['/signup']">Wrong email address? Click here to change it</a>
+</div> 
+<div class="signup-fields pt-5">
+  <!-- Main Form Start -->
+  <form [formGroup]="emailVerificationForm" (ngSubmit)="onCodeSubmit()">
+    <div class="form-group input-group">
+      <label class="has-float-label">
+        <input class="form-control" type="tel" formControlName="verificationCode" placeholder="Enter Code" maxlength="6" minlength="6"/>
+        <span>Enter 6-digit code</span>
+        <div class="focus-msg-check" *ngIf="emailVerificationForm.valid"><span class="icon-check"></span></div>
+      </label>
+    </div>
+    <div class="form-group input-group pt-5 pb-2">
+      <button class="btn btn-block my-1 btn-primary" [ngClass]="{ 'btn-disabled btn-light' : !emailVerificationForm.valid }" [disabled]="!emailVerificationForm.valid" type="submit">Verify</button>
+    </div>
+    <div class="text-center pt-4">
+      <div class="form-group py-3 font-regular"><a class="btn-success-text" (click)="resendEmailVerificationCode()">Resend code</a></div>
+      <div class="form-group py-3 input-group justify-content-center align-items-center">
+          <span class="icon-medical mr-3"></span>
+          <div>Your information is secure</div>
+      </div>
+    </div>
+  </form>
+  <!-- Main Form End -->
+</div>

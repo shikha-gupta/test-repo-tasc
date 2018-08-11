@@ -1,0 +1,46 @@
+<div class="mt-5 pt-5 pb-2 title-outer">
+  <h1 class="login-title text-uppercase">Sign in to your account</h1>
+  <div class="seperator d-block d-lg-none mt-4"></div>
+</div>
+<div class="login-fields pt-5">
+  <!-- Main Form Start -->
+  <form name="loginForm" [formGroup]="loginForm" (ngSubmit)="submitLogin()">
+    <div class="form-group input-group">
+      <label class="has-float-label">
+        <input formControlName="email" class="form-control" type="email" placeholder="Email"/>
+        <span>Email</span>
+      </label>
+    </div>
+  
+    <div class="form-group input-group">
+      <label class="has-float-label">
+        <input formControlName="password" class="form-control password-control" type="{{passwordFieldType}}" placeholder="Password"/>
+        <span>Password</span>
+        <div (click)="togglePasswordType()" name="showHidePassword" class="focus-msg button-transparent">{{passwordBtnText}}</div>
+      </label>
+    </div>
+    <div class="form-group input-group pt-4 pb-2 remember-me">
+      <div class="d-flex flex-wrap justify-content-between align-items-center w-100 px-0">
+        <div class="col-sm d-flex px-0 align-items-center remember-switch">
+          <label class="switch mr-3">
+            <input type="checkbox" name="rememberMeToggle" (change)="rememberMeToggle()" [checked]="rememberMe">
+            <span class="slider round"></span>
+          </label><span>Remember me</span>
+        </div>
+        <div class="col-sm px-0">
+          <button class="btn btn-block my-1 btn-primary" [ngClass]="{ 'btn-disabled btn-light' : !loginForm.valid }" [disabled]="!loginForm.valid" type="submit">Sign in</button>
+        </div>
+      </div>
+    </div>
+    <div class="pt-2">
+      <div class="form-group py-3 input-group align-items-center">
+        <span class="icon-lock lock-icon mr-3"></span>
+        <div>Your information is secure</div>
+      </div>
+      <div class="form-group py-3 font-light default">By continuing you agree to the <a class="btn-link font-light"  href="www.jfjgf.com">Terms and Conditions</a></div>
+      <div class="form-group py-3 font-light default">Don't have an account? <a class="btn-link font-light" [routerLink]="['/signup']">Sign up</a></div>
+      <div class="form-group py-3 font-light default"><a class="btn-link font-light" [routerLink]="['/forgot-password']">Forgot password?</a></div>
+    </div>
+  </form>
+  <!-- Main Form End -->
+</div>

@@ -1,0 +1,99 @@
+@import '../../../../assets/scss/_variables.scss';
+@import '../../../../assets/scss/_mixin.scss';
+
+.profile-sidebar {
+  li {
+    outline: none;
+    cursor: pointer;
+    @include font-mixin('Roboto-light', $colour: tasc-color('inputs','focus'));
+    margin-bottom: 16px;
+    &.active {
+      @include font-mixin('Roboto-regular', $colour: tasc-color('foreground','dark'));
+    }
+  }
+}
+.profile-bg {
+  background: url('#{$assetPath}/profile-bg.svg') no-repeat;
+  background-size: cover;
+  background-color: #f4f4f4;
+  padding: 50px 0 100px;
+  .profile-contain {
+    background: url('#{$assetPath}/profile-contain.png') no-repeat;
+    background-position: center top;
+    background-size: 100%;
+    padding-bottom: 100px;
+  }
+}
+.profile-container {
+  padding: 60px 50px;
+  margin-bottom: 60px;
+  .profile-content {
+    .profile-row {
+      @include font-mixin('Roboto-light');
+      display: flex;
+      align-items: flex-end;
+      position: relative;
+      margin: 30px 0 0;
+      .profile-icon {
+        @include font-mixin($size: 2.6rem, $lh: 30px);
+        width: 40px;
+        position: absolute;
+        text-align: left;
+        left: 0;
+        bottom: 0;
+        align-items: flex-start;
+      }
+      .icon {
+        @include font-mixin($colour: rgba(0, 0, 0, 0.3), $lh: inherit);
+
+        &.icon-pencil {
+          @include font-mixin($size: 1.6rem);
+        }
+        &.icon-add {
+          @include font-mixin($size: 3rem);
+          position: relative;
+          bottom: 0;
+          left: -5px;
+        }
+      }
+      &:hover {
+        .icon {
+          color: tasc-color('foreground','link');
+        }
+      }
+      .profile-text {
+        flex: 1;
+        padding-left: 30px;
+        .profile-value {
+          @include font-mixin($size: 2.4rem, $colour: tasc-color('primary','pressed'), $lh: 28px);
+        }
+      }
+      .profile-label {
+        @include font-mixin($size: 1.3rem, $colour: tasc-color('inputs','focus'));
+      }
+    }
+  }
+}
+@media (max-width: 991px) {
+  .profile-bg {
+    padding: 50px 0 0;
+    .profile-contain {
+      background: url('#{$assetPath}/profile-mobile-bg.png') no-repeat;
+      background-position: top left;
+      background-size: 200%;
+      padding: 20px 0 0;
+    }
+  }
+  .profile-container {
+    padding: 30px 10px;
+    .profile-content {
+      .profile-row {
+        .profile-text {
+          .profile-value {
+            @include font-mixin($size: 1.6rem);
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,55 @@
+@import '../../../../assets/scss/_variables.scss';
+@import '../../../../assets/scss/_mixin.scss';
+
+.login-title {
+  @include font-mixin('Roboto-medium', 1.8rem, tasc-color('foreground', 'dark'), bold);
+}
+
+.login-fields {
+  position: relative;
+  z-index: 5;
+  .login-instruction {
+    span {
+      font-size: 14px;
+    }
+  }
+  .success {
+    color: tasc-color('foreground', 'focus');
+    font-weight: 600;
+  }
+  .focus-msg {
+    @include font-mixin('Roboto-light', 1.6rem, tasc-color('foreground', 'link'));
+    font-weight: bold;
+    position: absolute;
+    right: 12px;
+    top: 35px;
+    z-index: 11;
+  }
+  .focus-msg-check {
+    @include font-mixin('Roboto-light', 2rem, tasc-color('foreground', 'success'));
+    font-weight: bold;
+    position: absolute;
+    right: 15px;
+    top: 22px;
+    z-index: 11;
+  }
+}
+
+@media (max-width: 991px) {
+  .title-outer {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .login-fields {
+    padding: 0;
+    .focus-msg {
+      top: 28px;
+    }
+    .remember-me {
+      padding: 10px 0 0!important;
+      .remember-switch {
+        margin-bottom: 25px;
+      }
+    }
+  }
+}

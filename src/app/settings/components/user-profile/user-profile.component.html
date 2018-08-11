@@ -1,0 +1,167 @@
+
+<div class="profile-container box-shadow-container">
+  <div class="title d-flex flex-column profile-icon">
+    PROFILE
+    <div class="seperator mt-3"></div>
+  </div>
+  <div class="profile-content pt-5">
+    <div class="profile-row">
+      <div class="d-flex flex-column profile-icon">
+        <span class="icon icon-lock"></span>
+      </div>
+      <div class="profile-text">
+        <div class="profile-label">TASC ID</div>
+        <div class="profile-value">{{userData.tasc_id}}</div>
+      </div>
+    </div>
+
+    <div class="profile-row">
+      <div class="d-flex flex-column profile-icon">
+        <span class="icon" [ngClass]="[(userData.name) ? 'icon-pencil' :'icon-add']"></span>
+      </div>
+      <div class="profile-text">
+        <div *ngIf="userData.name" class="profile-label">Name </div>
+        <div class="profile-value" [ngClass]="[(userData.name) ? '' :'success']"><a (click)="openModal(template, 'name')">{{userData.name?userData.name:'Add name'}}</a></div>
+      </div>
+    </div>
+
+    <div class="profile-row">
+      <div class="d-flex flex-column profile-icon">
+        <span class="icon" [ngClass]="[(userData.primary_email?.value) ? 'icon-pencil' :'icon-add']"></span>
+      </div>
+      <div class="profile-text">
+        <div *ngIf="userData.primary_email?.value" class="profile-label">Primary email <span *ngIf="userData.primary_email?.isVerified">(verified)</span></div>
+        <div class="profile-value" [ngClass]="[(userData.primary_email?.value) ? '' :'success']"><a (click)="openModal(template, 'primary_email')">{{userData.primary_email?.value?userData.primary_email?.value:'Add primary email'}}</a></div>
+      </div>
+    </div>
+    <div class="profile-row">
+      <div class="d-flex flex-column profile-icon">
+        <span class="icon" [ngClass]="[(userData.alt_email?.value) ? 'icon-pencil' :'icon-add']"></span>
+      </div>
+      <div class="profile-text">
+        <div *ngIf="userData.alt_email?.value" class="profile-label">Alternate email <span *ngIf="userData.alt_email?.isVerified">(verified)</span></div>
+        <div class="profile-value" [ngClass]="[(userData.alt_email?.value) ? '' :'success']"><a (click)="openModal(template, 'alt_email')">{{userData.alt_email?.value?userData.alt_email?.value:'Add alternate email'}}</a></div>
+      </div>
+      <div class="profile-button d-none d-lg-block">
+        <a href="" class="success">Make Primary</a>
+      </div>
+    </div>
+
+    <div class="profile-row">
+      <div class="d-flex flex-column profile-icon">
+        <span class="icon" [ngClass]="[(userData.mobile?.value) ? 'icon-pencil' :'icon-add']"></span>
+      </div>
+      <div class="profile-text">
+        <div *ngIf="userData.mobile?.value" class="profile-label">Mobile phone <span *ngIf="userData.mobile?.isVerified">(verified)</span></div>
+        <div class="profile-value" [ngClass]="[(userData.mobile?.value) ? '' :'success']"><a (click)="openModal(template, 'mobile')">{{userData.mobile?.value?userData.mobile?.value:'Add mobile phone'}}</a></div>
+      </div>
+    </div>
+
+    <div class="profile-row">
+      <div class="d-flex flex-column profile-icon">
+        <span class="icon" [ngClass]="[(userData.home_phone) ? 'icon-pencil' :'icon-add']"></span>
+      </div>
+      <div class="profile-text">
+        <div *ngIf="userData.home_phone" class="profile-label">Home phone </div>
+        <div class="profile-value" [ngClass]="[(userData.home_phone) ? '' :'success']"><a (click)="openModal(template, 'home_phone')">{{userData.home_phone?userData.home_phone:'Add home phone'}}</a></div>
+      </div>
+    </div>
+
+
+    <div class="profile-row">
+      <div class="d-flex flex-column profile-icon">
+        <span class="icon" [ngClass]="[(userData.work_phone) ? 'icon-pencil' :'icon-add']"></span>
+      </div>
+      <div class="profile-text">
+        <div *ngIf="userData.work_phone" class="profile-label">Work phone </div>
+        <div class="profile-value" [ngClass]="[(userData.work_phone) ? '' :'success']"><a (click)="openModal(template, 'work_phone')">{{userData.work_phone?userData.work_phone:'Add work phone'}}</a></div>
+      </div>
+    </div>
+
+    <div class="profile-row">
+      <div class="d-flex flex-column profile-icon">
+        <span class="icon" [ngClass]="[(userData.primary_address) ? 'icon-pencil' :'icon-add']"></span>
+      </div>
+      <div class="profile-text">
+        <div *ngIf="userData.primary_address" class="profile-label">Primary address </div>
+        <div class="profile-value" [ngClass]="[(userData.primary_address) ? '' :'success']"><a (click)="openModal(template, 'primary_address')">{{userData.primary_address?stringifyAddress(userData.primary_address):'Add primary address'}}</a></div>
+      </div>
+    </div>
+
+    <div class="profile-row">
+      <div class="d-flex flex-column profile-icon">
+        <span class="icon" [ngClass]="[(userData.gender) ? 'icon-pencil' :'icon-add']"></span>
+      </div>
+      <div class="profile-text">
+        <div *ngIf="userData.gender" class="profile-label">Gender </div>
+        <div class="profile-value" [ngClass]="[(userData.gender) ? '' :'success']"><a (click)="openModal(template, 'gender')">{{userData.gender?userData.gender:'Add gender'}}</a></div>
+      </div>
+    </div>
+
+    <div class="profile-row">
+      <div class="d-flex flex-column profile-icon">
+        <span class="icon" [ngClass]="[(userData.date_of_birth) ? 'icon-pencil' :'icon-add']"></span>
+      </div>
+      <div class="profile-text">
+        <div *ngIf="userData.date_of_birth" class="profile-label">Date of birth </div>
+        <div class="profile-value" [ngClass]="[(userData.date_of_birth) ? '' :'success']"><a (click)="openModal(template, 'date_of_birth')">{{userData.date_of_birth?userData.date_of_birth:'Add date of birth'}}</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+ 
+<ng-template #template>
+  <div [ngSwitch]="selectedTemplate">
+    <div *ngSwitchCase="'name'">
+      app
+    </div>
+    <div *ngSwitchCase="'primary_email'">
+      <div class="modal-container">
+        <div class="title modal-header d-flex flex-column">
+          <div class="text-uppercase">Add Alternate Email</div>
+          <div class="seperator mt-3"></div>
+          <div class="modal-label mt-5">To add an email address, we have to verify it first.</div>
+        </div>
+        <div class="modal-body modal-single-height">
+          <form>
+            <div class="form-group input-group">
+              <label class="has-float-label">
+                <input class="form-control" type="email" placeholder="Alternate email"/>
+                <span>Alternate email</span>
+              </label>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <div class="d-flex col-sm-8 col-xs-12 px-0">
+            <button aria-label="Close" (click)="modalRef.hide()" class="btn btn-block btn-outline-secondary">Cancel</button>
+            <button type="submit" class="btn btn-primary btn-block mt-0 btn-light btn-disabled">Send Code</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *ngSwitchCase="'alt_email'">
+      <p>A</p>
+    </div>
+    <div *ngSwitchCase="'mobile'">
+      <p>B</p>
+    </div>
+    <div *ngSwitchCase="'home_phone'">
+      <p>C</p>
+    </div>
+    <div *ngSwitchCase="'work_phone'">
+      <p>D</p>
+    </div>
+    <div *ngSwitchCase="'primary_address'">
+      <p>E</p>
+    </div>
+    <div *ngSwitchCase="'gender'">
+      <p>F</p>
+    </div>
+    <div *ngSwitchCase="'date_of_birth'">
+      <p>G</p>
+    </div>
+  </div>
+</ng-template>

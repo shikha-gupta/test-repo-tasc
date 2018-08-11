@@ -1,0 +1,29 @@
+<div class="font-bold black font-18 verification-code mb-4">Enable two-factor authentication?</div>
+<div class="signup-msg my-3">
+  Two factor-authentication will prompt you to enter a code when you sign in on a new device.
+</div>
+<div class="signup-fields pt-5">
+  <!-- Main Form Start -->
+  <form name="phoneVerificationForm" [formGroup]="phoneVerificationForm" (ngSubmit)="onSubmit()">
+    <div class="form-group input-group">
+      <label class="has-float-label">
+        <input class="form-control" type="tel" formControlName="phoneNumber" mask="(000) 000-0000" placeholder="Mobile Phone"/>
+        <span>Mobile phone</span>
+      </label>
+    </div>
+    <div class="signup-msg my-3">
+      Standard call, messaging or data rates may apply
+    </div>
+    <div class="form-group d-flex pt-5 pb-2">
+      <button class="btn btn-block my-1 mr-5 btn-outline-secondary" (click)="skipVerification()" type="button">Skip this</button>
+      <button class="btn btn-block my-1 btn-primary" [ngClass]="{ 'btn-disabled btn-light' : !phoneVerificationForm.valid }" [disabled]="!phoneVerificationForm.valid" type="submit">Next</button>
+    </div>
+    <div class="text-center pt-4">
+      <div class="form-group py-3 input-group justify-content-center align-items-center">
+        <span class="icon-lock lock-icon mr-3"></span>
+        <div>Your information is secure</div>
+      </div>
+    </div>
+  </form>
+  <!-- Main Form End -->
+</div>

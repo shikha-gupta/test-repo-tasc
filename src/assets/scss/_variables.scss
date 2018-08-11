@@ -1,0 +1,65 @@
+/***************
+   Variables
+***************/
+
+/* colors */
+$tasc-color-key: 'default';
+
+$tasc-colors: (
+  'primary': (
+    'default': linear-gradient(294.37deg, #125D5A 0%, #2F8C7B 100%),
+    'pressed': #222324,
+    'disabled': #F5F5F5,
+  ),
+  'secondary': (
+    'default': #318B7B,
+    'pressed': rgba(23,71,70,0.09),
+    'disabled': #A9AFAD,
+    'success': #145D5A
+  ),
+  'foreground': (
+    'default': #0F7157,
+    'pressed': #143736,
+    'disabled': #5B5F5E,
+    'dark':   #000,
+    'light':  #fff,
+    'error':  #D61105,
+    'success': #71CEA7,
+    'focus': rgba(0, 130, 106, 0.6),
+    'link': #00836A
+  ),
+  'inputs': (
+    'default': #4A4F4E,
+    'focus': rgba(110, 114, 113, 0.7),
+    'error':	#E02800,
+    'link': #125D5A,
+    'border-active':#2F8C7B,
+    'gray':  #E4E4E4,
+    'success': #0f7157,
+    'active': linear-gradient(294.37deg, #5dad94 0%, #71caa7 100%),
+    'inactive': #fff,
+    'disabled': #f5f5f5
+  )
+);
+
+@function tasc-color (
+  $name: 'primary',
+  $variant: $tasc-color-key
+) {
+  $color: null;
+  $color-spectrum: map-get($tasc-colors, $name);
+  @if $color-spectrum {
+    $color: map-get($color-spectrum, $variant);
+  }
+  @return $color;
+}
+
+/*  Assets */
+$assetPath: "/assets/images";
+
+/*  Devices */
+$screen-xs-max:   576px;
+$screen-sm-max:   768px;
+$screen-md-max:   992px;
+$screen-ipad-max: 1024px;
+$screen-lg-max:   1500px;

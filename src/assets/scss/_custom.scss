@@ -1,0 +1,208 @@
+html { 
+  @include font-mixin($size: 62.5%);
+}
+
+body {
+  @include font-mixin('Roboto-regular', 1.6rem, tasc-color('foreground', 'dark'), normal);
+}
+
+img {
+  max-width: 100%;
+  outline: 0;
+  border: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  cursor: pointer;
+}
+
+.cursor-default {
+  cursor: default;
+}
+
+.title {
+  @include font-mixin('Roboto-bold', 3rem, tasc-color('foreground', 'dark'));
+}
+
+.seperator {
+  height: 5px;	
+  width: 60px;
+  display: inline-block;
+  background: linear-gradient(90deg, #FBB94C 0%, #FDDD83 100%);
+}
+
+.content-title {
+  @include font-mixin('Roboto-bold', 4.4rem);
+}
+
+.font-italic {
+  font-style: italic;
+}
+
+.font-10 {
+  @include font-mixin('Roboto-light', 1rem !important);
+}
+
+.font-11 {
+  @include font-mixin('Roboto-light', 1.1rem !important);
+}
+
+.font-13 {
+  @include font-mixin('Roboto-light', 1.3rem !important);
+}
+
+.font-14 {
+  @include font-mixin($size: 1.4rem);
+}
+
+.font-16 {
+  @include font-mixin($size: 1.6rem);
+}
+
+.font-18 {
+  @include font-mixin('Roboto-light', 1.8rem);
+}
+
+.font-regular {
+  @include font-mixin('Roboto-regular');
+}
+
+.font-light {
+  @include font-mixin('Roboto-light', $weight: bold);
+}
+
+.font-bold {
+  @include font-mixin('Roboto-bold');
+}
+
+.font-medium {
+  @include font-mixin('Roboto-medium');
+}
+
+.black {
+  color: tasc-color('foreground', 'dark');
+}
+
+.default {
+  color: tasc-color('primary', 'pressed');
+}
+
+.light {
+  color: tasc-color('foreground', 'light');
+}
+
+.red {
+  color: tasc-color('inputs', 'error');
+}
+
+.sent-icon {
+  @include font-mixin($size: 7.2rem, $colour: tasc-color('foreground', 'success'));
+}
+
+.lock-icon {
+  @include font-mixin($size: 3rem, $colour: rgba(0, 0, 0, 0.2));
+}
+
+.green {
+  color: tasc-color('foreground', 'success');
+}
+
+.success {
+  @include font-mixin('Roboto-thin', $weight: bold);
+  color: tasc-color('foreground','link')!important;
+}
+
+.alert-msg {
+  @include font-mixin('Roboto-light', 1.8rem, tasc-color('foreground', 'light'));
+  padding: 25px 30px; 
+  .icon-process {
+    @include font-mixin($size: 2.8rem);
+  }
+  &.danger {
+    background: tasc-color('foreground', 'error');
+  }
+  &.process {
+    background: tasc-color('foreground', 'dark');
+  }
+}
+
+.gray-bg {
+  background: linear-gradient(256.65deg, #FAFAFA 0%, #F4F4F4 100%);
+}
+
+.box-shadow-container {
+  background-color: tasc-color('foreground', 'light');;	
+  box-shadow: 0 8px 94px 0 rgba(108,108,108,0.26);
+}
+
+.toast-container {
+  width: 100%;
+  &.toast-top-right {
+    top: 0;
+    right: 0;
+  }
+  .toast {
+    width: 100% !important;
+    box-shadow: none !important;
+    padding: 24px 15px 24px 50px !important;
+    background-position: 15px 24px !important;
+    background-size: 30px !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+.toast-info {
+  background-color: tasc-color('foreground', 'dark') !important;
+}
+.toast-error {
+  background-color: tasc-color('foreground', 'error') !important;
+}
+.toast-info,.toast-error {
+  background-image: url('#{$assetPath}/process.svg') !important;
+}
+.toast-success {
+  background-image: url('#{$assetPath}/check.svg') !important;
+}
+.toast-message {
+  order: 1;
+}
+button.toast-close-button {
+  order: 2;
+  top: 2px !important;
+  right: 0 !important;
+  span {
+    text-indent: -9999px;
+    background: url('#{$assetPath}/close.svg') no-repeat !important;
+    display: block;
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.call-link {
+  pointer-events: none;
+  color: tasc-color('inputs', 'focus') !important;
+}
+
+.focus-msg {
+  cursor: pointer;
+}
+
+/* Media Query */
+@media (max-width: 991px) {
+  .call-link {
+    cursor: pointer;
+    pointer-events: auto;
+    color: tasc-color('foreground', 'link') !important;
+    font-weight: bold;
+
+    &:hover {
+      color: tasc-color('foreground', 'link') !important;
+    }
+  }
+}

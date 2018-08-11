@@ -1,0 +1,11 @@
+@import '../../../../assets/scss/_variables.scss';
+@import '../../../../assets/scss/_mixin.scss';
+
+@media (max-width: 991px) {
+  .title-outer {
+    padding: 0 !important;
+    .title {
+      @include font-mixin($size: 2rem);
+    }
+  }
+}

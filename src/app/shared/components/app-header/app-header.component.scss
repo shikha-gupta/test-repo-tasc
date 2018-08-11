@@ -1,0 +1,186 @@
+@import '../../../../assets/scss/_variables.scss';
+@import '../../../../assets/scss/_mixin.scss';
+
+.navbar {
+  padding: 10px 15px 0;
+  border-bottom: rgba(238, 238, 238, 0.6) 2px solid;
+  .top-nav {
+    li {
+      @include font-mixin('Roboto-light', 1.6rem, tasc-color('inputs','focus'), 300, 16px);
+      padding: 10px 0 10px 35px;	
+      text-align: center;
+      a {
+        color: tasc-color('inputs','focus');
+      }
+    }
+  }
+  .main-nav {
+    li {
+      @include font-mixin('Roboto-light', 1.8rem, tasc-color('primary','pressed'), 300);
+      text-align: center;
+      position: relative;
+      text-transform: uppercase;
+      margin: 0 0 0 45px;
+      span {
+        display: block;
+        padding: 10px 0 15px;
+      }
+      &.active {
+        @include font-mixin('Roboto-medium');
+        &:before {
+          border-bottom: #6AC4A3 3px solid;
+          content:"";
+          display: block;
+          position: absolute;
+          bottom: -2px;
+          right: 0;
+          left: 0;
+        }
+      }
+      a {
+        color: tasc-color('primary','pressed');
+      }
+    }
+  }
+}
+.alert-nav {
+  display: none;
+}
+@media (max-width: 991px) {
+  .navbar {
+    padding: 0 15px;
+    border-bottom: 0;
+    .container-fluid {
+      align-items: flex-start;
+      .trigger {
+        @include font-mixin($size: 1.6rem, $colour: tasc-color('foreground','light'));
+        position: relative;
+        z-index: 22;
+      }
+    }
+    li {
+      &.nav-item {
+        position: relative;
+      }
+    }
+  }
+  .alert-nav {
+    display: block;
+    order: 3;
+    margin-top: 20px;
+    .icon {
+      @include font-mixin($size: 3rem);
+    }
+  }
+  #collapseBasic {
+    display: none;
+  }
+  .navbar-brand {
+    order: 1;
+    width: 40px;
+    overflow: hidden;
+    margin: 10px 0 0;
+    border-radius: 100%;
+    img {
+      max-width: inherit;
+    }
+  }
+  .navbar-toggler {
+    order: 2;
+    position: relative;
+    width: 140px;
+    height: 70px;
+    border: 0;
+    outline: 0;
+    padding: 0;
+  }
+  .navbar-toggler:after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    position: absolute;
+    z-index: 11;
+    top: 0;
+    left: 0;
+    right: 0;
+    border-top: 70px solid tasc-color('foreground','dark');
+    border-left: 70px solid transparent;
+    border-right: 70px solid transparent;
+  }
+  .navbar {
+    .navbar-collapse {
+      position: fixed;
+      background: tasc-color('foreground','dark');
+      z-index: 999;
+      right: 0;
+      top: 0;
+      overflow: auto !important;
+      left: 0;
+      min-height: 100vh;
+      max-height: 100%;
+      a {
+        cursor: pointer;
+        color: tasc-color('foreground','light');
+      }
+    
+      .navbar-nav {
+        align-items: flex-start !important;
+        ul {
+          flex-direction: column;
+          margin: 0 20px;
+          width: calc(100% - 40px);
+          padding: 10px 0;
+          &.signout-nav {
+            order: 1;
+          }
+          &.top-nav {
+            order: 3 ;
+          }
+          &.main-nav {
+            order: 2;
+            border-top: #666 1px solid;
+            border-bottom: #666 1px solid;
+          }
+          li {
+            margin:0;
+            padding: 15px 0;
+            text-align: left;
+            ul {
+              padding-bottom: 0;
+              li {
+                padding: 8px 0;
+                text-transform: none;
+              }
+            }
+            span {
+              padding: 0;
+            }
+            .sub-menu {
+              .icon-arrow-down {
+                @include font-mixin($size: 2.8rem, $colour: rgba(255, 255, 255, 0.5));
+                position: absolute;
+                right: 0;
+                top: 7px;
+              }
+              &[aria-expanded="false"]{
+                .icon-arrow-down {
+                  transform: rotate(-180deg);
+                }
+              }
+            }
+            &.active {
+              color: tasc-color('foreground','success');
+              &:before {
+                display: none;
+              }
+            }
+            a {
+              @include font-mixin($colour: rgba(255, 255, 255, 0.8));
+            }
+          }
+        }
+      }
+    }
+  }
+}

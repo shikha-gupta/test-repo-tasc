@@ -1,0 +1,68 @@
+/***************
+   Buttons
+***************/
+
+.btn {
+  @include font-mixin('Roboto-thin', 2.4rem, $weight: 600);
+  height: 58px;
+  cursor: pointer;
+  border-radius: 0;
+  &.btn-small {
+    @include font-mixin('Roboto-thin', 1.6rem);
+    height: 42px;
+  }
+  &.btn-xs-small {
+    @include font-mixin('Roboto-thin', 1.4rem);
+    height: 32px;
+  }
+}
+
+.btn-primary {
+  background: tasc-color('primary');
+  border-color: tasc-color('secondary');
+  
+  &:hover {
+    background: tasc-color('forground', 'light');
+  }
+}
+
+.btn-light {
+  background: tasc-color('primary', 'disabled');
+  color: tasc-color('inputs', 'default');
+  border-color:tasc-color('primary', 'disabled');
+  &.disabled,&:disabled {
+    background: tasc-color('primary', 'disabled');
+    opacity: .85;
+    cursor: default;
+  }
+}
+
+.btn-link {
+  color: tasc-color('foreground', 'link')!important;
+  &:hover, &:focus {
+    color: tasc-color('foreground', 'link')!important;
+  }
+}
+
+.btn-success-text {
+  background: transparent;
+  color: tasc-color('foreground', 'link')!important;
+  font-weight: bold;
+  font-family: "Roboto-light";
+  &:hover, &:focus {
+    color: tasc-color('foreground', 'link');
+  }
+}
+
+.btn-outline-secondary {
+  color: tasc-color('inputs', 'link');
+  border-color: tasc-color('inputs', 'border-active');
+  &:hover,&:focus {
+    color: tasc-color('inputs', 'link');
+    background: transparent;
+    border-color: tasc-color('inputs', 'border-active');
+  }
+}
+
+
+

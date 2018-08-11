@@ -1,0 +1,139 @@
+/***************
+   Fonts
+***************/
+
+$font-path: "/assets/fonts";
+
+/* BEGIN Thin */
+@font-face {
+  font-family: 'Roboto-thin';
+  src: url("#{$font-path}/Roboto-Thin.woff2") format("woff2"), 
+      url("#{$font-path}/Roboto-Thin.woff") format("woff");
+  font-weight: 100;
+  font-style: normal; 
+}
+/* END Thin */
+
+/* BEGIN Light */
+@font-face {
+  font-family: 'Roboto-light';
+  src: url("#{$font-path}/Roboto-Light.woff2") format("woff2"), 
+  url("#{$font-path}/Roboto-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal; 
+}
+/* END Light */
+
+/* BEGIN Regular */
+@font-face {
+  font-family: 'Roboto-regular';
+  src: url("#{$font-path}/Roboto-Regular.woff2") format("woff2"), 
+  url("#{$font-path}/Roboto-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; 
+}
+/* END Regular */
+
+/* BEGIN Medium */
+@font-face {
+  font-family: 'Roboto-medium';
+  src: url("#{$font-path}/Roboto-Medium.woff2") format("woff2"), 
+  url("#{$font-path}/Roboto-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal; 
+}
+/* END Medium */
+
+/* BEGIN Bold */
+@font-face {
+  font-family: 'Roboto-bold';
+  src: url("#{$font-path}/Roboto-Bold.woff2") format("woff2"), 
+  url("#{$font-path}/Roboto-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal; 
+}
+/* END Bold */
+
+/* BEGIN Black */
+@font-face {
+  font-family: 'Roboto-black';
+  src: url("#{$font-path}/Roboto-Black.woff2") format("woff2"), 
+  url("#{$font-path}/Roboto-Black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal; 
+}
+/* END Black */
+
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('#{$font-path}/icomoon.eot?lhentf');
+  src:  url('#{$font-path}/icomoon.eot?lhentf#iefix') format('embedded-opentype'),
+    url('#{$font-path}/icomoon.ttf?lhentf') format('truetype'),
+    url('#{$font-path}/icomoon.woff?lhentf') format('woff'),
+    url('#{$font-path}/icomoon.svg?lhentf#icomoon') format('svg');
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-add:before {
+  content: "\e900";
+}
+.icon-alerts:before {
+  content: "\e901";
+}
+.icon-arrow-down:before {
+  content: "\e902";
+}
+.icon-arrow-right:before {
+  content: "\e903";
+}
+.icon-arrow-up:before {
+  content: "\e904";
+}
+.icon-check:before {
+  content: "\e905";
+}
+.icon-close:before {
+  content: "\e906";
+}
+.icon-dental:before {
+  content: "\e907";
+}
+.icon-eye:before {
+  content: "\e908";
+}
+.icon-lock:before {
+  content: "\e909";
+}
+.icon-medical:before {
+  content: "\e90a";
+}
+.icon-menu:before {
+  content: "\e90b";
+}
+.icon-pencil:before {
+  content: "\e90c";
+}
+.icon-process:before {
+  content: "\e90d";
+}
+.icon-search:before {
+  content: "\e90e";
+}
+.icon-users:before {
+  content: "\e90f";
+}

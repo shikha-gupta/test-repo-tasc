@@ -1,0 +1,75 @@
+@import '../../../../assets/scss/_variables.scss';
+@import '../../../../assets/scss/_mixin.scss';
+
+.overview-title-container {
+  margin-top: 30px;
+  .overiew-price {
+    @include font-mixin('Roboto-regular', 4.4rem);
+  }
+  .cash-balance-dropdown {
+    @include font-mixin('Roboto-light', 1.4rem);
+  }
+}
+
+.overview-container {
+  background: #eee;
+  .overview-col {
+    background: #fff;
+    padding: 30px 15px;
+    flex: 1;
+    justify-content: space-between;
+    &:first-child {
+      border-right: #eee 1px solid;
+    }
+  }
+  .account-repeat {
+    padding: 20px 0 30px;
+    border-bottom: #eee 1px solid;
+  }
+  .account-head {
+    font-size: 24px;
+  }
+  .account-price {
+    font-size: 24px;
+  }
+  .add-more a {
+    @include font-mixin('Roboto-light', 1.4rem);
+    color: #6E7271;
+  }
+  .account-icons {
+    font-size: 18px;
+    color: rgba(110, 114, 113, 0.6);
+  }
+  .account-balance {
+    @include font-mixin('Roboto-light', 1.4rem);
+    color: #6E7271;
+  }
+  .rembuirsement-desc {
+    padding: 15px 0;
+    p {
+      @include font-mixin('Roboto-light');
+    }
+  }
+  .rembuirse-head {
+    @include font-mixin('Roboto-regular', 2rem);
+   color: tasc-color('primary', 'pressed');
+  }
+  .recent-transctions-data {
+    .recent-row {
+      &:nth-child(odd){
+        background-color: #FAFAFA;
+      }
+      .recent-col {
+        @include font-mixin('Roboto-light');
+        padding: 10px 15px;
+        color: #6E7271;
+        &:nth-child(1){
+          flex: 2;
+        }
+        &:nth-child(3){
+          text-align: right;
+        }
+      }
+    }
+  }
+}

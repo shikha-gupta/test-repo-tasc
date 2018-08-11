@@ -1,0 +1,41 @@
+
+<div class="profile-container box-shadow-container">
+    <div class="title d-flex flex-column profile-icon">
+      SIGN IN & SECURITY
+      <div class="seperator mt-3"></div>
+    </div>
+    
+    <div class="profile-content pt-3 pb-5">
+      <div class="font-13 font-light default pt-4">
+         Control your sign-in access, along with two-factor authentication, which prompts you to enter a code when you sign in on a new device.
+      </div>
+      <div class="profile-row pt-4">
+        <div class="profile-text px-0">
+          <div class="profile-label">
+            <a class="btn-link font-light" (click)="openModal(template)">Change Password</a>
+          </div>
+        </div>
+        <div class="profile-label">Last changed 12/20/18</div>
+      </div>
+      <div class="profile-row pt-4 align-items-start">
+        <div class="profile-text px-0">
+          <div class="profile-value">9823-0498-0298</div>
+          <div class="font-italic mt-2 font-11 font-light">Enabled with (2123) 56523</div>
+        </div>
+        <div class="profile-button">
+          <div class="d-flex align-items-center remember-switch">
+              <span class="font-11 mr-4">on</span>
+              <label class="switch mr-3">
+                <input type="checkbox">
+                <span class="slider round"></span>
+              </label>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <ng-template #template>
+    <change-password-modal [currentModRef]="modalRef"></change-password-modal>
+  </ng-template>
+  

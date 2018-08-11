@@ -1,0 +1,99 @@
+<nav class="navbar navbar-expand-lg navbar-light">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" (click)="isCollapsed = !isCollapsed"
+    [attr.aria-expanded]="!isCollapsed" data-toggle="collapse" data-target="#navbarNavDropdown">
+      <span class="icon-menu trigger"></span>
+    </button>
+    <a class="navbar-brand">
+      <img src="assets/images/tasc-logo.png" alt="tasc">
+    </a>
+    <div class="alert-nav"><span class="icon icon-alerts"></span></div>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown" [collapse]="!isCollapsed">
+      <div class="text-center pt-4 d-block d-lg-none">
+        <a class="close-menu" (click)="isCollapsed = !isCollapsed"
+        [attr.aria-expanded]="!isCollapsed" data-toggle="collapse" data-target="#navbarNavDropdown">
+          <span class="icon-close trigger"></span>
+        </a>
+      </div>
+      <div class="navbar-nav ml-auto d-flex flex-column align-items-end">
+      <ul class="d-block d-lg-none signout-nav">
+        <li>
+          <a (click)="awsService.signOut()">Sign out</a>
+        </li>
+      </ul>
+      <ul class="my-0 d-flex top-nav">
+        <li class="nav-item active d-none d-lg-block">
+          Alerts
+        </li>
+        <li class="nav-item">
+          <span>
+            <a class="d-lg-block d-none">Settings</a>
+            <a (click)="isCollapseSet = !isCollapseSet; isCollapsetrans = false;"
+            [attr.aria-expanded]="!isCollapseSet" data-toggle="collapse" data-target="#SettingsDropdown" class="sub-menu d-lg-none d-flex justify-content-between">
+            Settings
+            <span class="icon-arrow-down"></span>
+            </a>
+          </span>
+          <ul id="SettingsDropdown" [collapse]="!isCollapseSet">
+            <li><a [routerLink]="['/settings/user-profile']" (click)="isCollapsed = !isCollapsed">Profile</a></li>
+            <li><a href="#">Notificatons</a></li>
+            <li><a href="#">Bank accounts</a></li>
+            <li><a [routerLink]="['/settings/security']" (click)="isCollapsed = !isCollapsed">Sign in  & security</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a href="#">Support</a>
+        </li>
+        <li class="nav-item">
+          <a href="#">Contact Us</a>
+        </li>
+        <li class="d-none d-lg-block">
+          <a (click)="awsService.signOut()">Sign out</a>
+        </li>
+      </ul>
+      <ul class="my-0 d-flex main-nav">
+        <li class="nav-item active">
+          <span>OVERVIEW</span>
+        </li>
+        <li class="nav-item">
+          <span>
+            <a class="d-lg-block d-none">BENEFIT Accounts</a>
+            <a (click)="isCollapsedone = !isCollapsedone; isCollapsetrans = false;"
+            [attr.aria-expanded]="!isCollapsedone" data-toggle="collapse" data-target="#BenefitsDropdown" class="sub-menu d-lg-none d-flex justify-content-between">
+            BENEFIT Accounts
+            <span class="icon-arrow-down"></span>
+            </a>
+          </span>
+          <ul id="BenefitsDropdown" [collapse]="!isCollapsedone">
+            <li><a href="#">All Benefit accounts</a></li>
+            <li><a href="#">All Benefit accounts</a></li>
+            <li><a href="#">All Benefit accounts</a></li>
+            <li><a href="#">All Benefit accounts</a></li>
+            <li><a href="#">All Benefit accounts</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <span>
+            <a class="d-lg-block d-none">TRANSACTIONS</a>
+            <a (click)="isCollapsetrans = !isCollapsetrans; isCollapsedone = false;"
+            [attr.aria-expanded]="!isCollapsedone" data-toggle="collapse" data-target="#transctionDropdown"  class="sub-menu d-lg-none d-flex justify-content-between">
+            TRANSACTIONS
+            <span class="icon-arrow-down"></span>  
+            </a>
+          </span>
+          <ul id="transctionDropdown" [collapse]="!isCollapsetrans">
+              <li><a href="#">All Benefit accounts</a></li>
+              <li><a href="#">All Benefit accounts</a></li>
+              <li><a href="#">All Benefit accounts</a></li>
+              <li><a href="#">All Benefit accounts</a></li>
+              <li><a href="#">All Benefit accounts</a></li>
+            </ul>
+        </li>
+        <li class="nav-item">
+          <span><a href="#">TASC Card</a></span>
+        </li>
+      </ul>
+      </div>
+    </div>
+  </div>
+</nav>
